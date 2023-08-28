@@ -73,7 +73,7 @@ def createTask(request):
 
 def signout(request):
         logout(request)
-        return redirect('home')
+        return redirect('signin')
     
 def signin(request):
     if request.method == 'GET':
@@ -84,7 +84,7 @@ def signin(request):
         user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
         if user is None:
             return render(request, 'signin.html', {
-            'error': 'Username or password is incorrect',
+            'error': 'Usuario o contraseña incorrectos',
             ##'form': AuthenticationForm(),
         })
         else:

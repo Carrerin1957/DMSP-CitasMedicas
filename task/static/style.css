@@ -1,25 +1,12 @@
 body{
     color: #7F292C;
+   
 }
 
-.boton{
-    background-color: #7F292C;
-    color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
-    width: 100px;
-}
 
-.carta-IS{
-    background-color: rgba(200, 138, 63, 0.47);
-    border: 3px solid #902829;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
-}
 
+
+/* Estilos para el cuerpo del login */
 .divider:after,
 .divider:before {
 content: "";
@@ -36,7 +23,7 @@ height: 100%;
 }
 }
 
-/* Titulo*/
+/* Titulo del login*/
 .text-with-lines {
     position: relative;
     text-align: center;
@@ -61,5 +48,6 @@ height: 100%;
 
   .navbar-custom {
     background-color: #301B46;
-   
+    
   }
+

@@ -2,47 +2,130 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Django CRUD Application</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
-<body>
-    <nav>
-        <ul>
-            <li>
-                <a href="/">Home</a>
-            </li>      
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
 
+  <body style="margin-top: 55px; margin-bottom:90px">
+
+    <!--Navbar-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Rol del usuario</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
             {% if user.is_authenticated %}
-                <li>
-                    <a href="/tasks">Tasks</a>
-                </li>
-                <li>
-                    <a href="/logout">Logout</a>
-                </li>
 
-            {% else %}
-
-            <li>
-                <a href="/signup">Signup</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tasks">Tasks</a>
             </li>
-            <li>
-                <a href="/signin">Signin</a>
+            <li class="nav-item">
+                <a class="nav-link" href="/task">Create task</a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
             {% endif %}
 
-        </ul>
+          </ul>
+        </div>
+        <img
+          src="{% static 'logo-1.png' %}"
+          alt="Logo-coatza"
+          width="130"
+          height="35"
+          class="d-inline-block align-text-top"
+        />
+      </div>
     </nav>
 
-    {% block content %}
     
-    {% endblock %}
 
     
 
-</body>
+    <div class="" >
+
+        <!--Breadcrumbs prueba-->
+        <nav  aria-label="breadcrumb" style="background-color: #DEDAD0; --bs-breadcrumb-divider: '>>'; height: 30px">
+            <div class="container-fluid">
+                <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+                </ol>
+            </div>
+        </nav>
+
+        <!--Contenido de las paginas-->
+        <div class="container-fluid">
+            {% block content %} 
+        
+            {% endblock %}
+        </div>
+        
+    </div>
+
+    
+    
+
+    
+
+    <!--Footer-->
+    <footer class="fixed-bottom">
+
+        <div
+    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 navbar-custom "
+  >
+    <!-- Copyright -->
+    <div class="text-white mb-3 mb-md-0">
+      Copyright © 2022-2025. All rights reserved.
+    </div>
+    <!-- Copyright -->
+
+    <!-- Right -->
+    <div>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="#!" class="text-white">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+  </div>
+
+    </footer>
+    
+
+  </body>
 </html>
