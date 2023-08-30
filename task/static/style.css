@@ -1,7 +1,9 @@
 body{
     color: #7F292C;
+    
    
 }
+
 
 
 
@@ -51,3 +53,13 @@ height: 100%;
     
   }
 
+  .custom-card{
+    background-color: #902829;
+    color: #fff;
+    border: 2px solid #C88A3F;
+    height: 85px;
+    font-size: 25px;
+    
+  }
+
+ 
