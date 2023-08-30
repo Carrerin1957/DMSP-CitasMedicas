@@ -36,7 +36,7 @@ def signup(request):
                 user = User.objects.create_user(username = request.POST['username'], password=request.POST['password1'])
                 user.save()
                 login(request,user)
-                return redirect('tasks')
+                return redirect('home')
             
             except IntegrityError:
                 return render(request, 'signup.html', {
@@ -89,6 +89,6 @@ def signin(request):
         })
         else:
             login(request, user)
-            return redirect('tasks')
+            return redirect('home')
         
        

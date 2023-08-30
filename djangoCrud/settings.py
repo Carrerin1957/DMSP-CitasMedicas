@@ -76,14 +76,24 @@ WSGI_APPLICATION = 'djangoCrud.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'taskdb1',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME':'postgres',
         'USER':'postgres',
-        'PASSWORD':'oscar123',
-        'HOST':'localhost',
+        'PASSWORD':'kjTMKnauhNqdlYbQ',
+        'HOST':'db.hagkbnirphjrjddmcbyu.supabase.co',
         'PORT':'5432',
     }
 }
+
+import os
+import supabase_py as supabase
+
+# Configuración de la autenticación de Supabase
+SUPABASE_URL = 'https://hagkbnirphjrjddmcbyu.supabase.co'
+SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhhZ2tibmlycGhqcmpkZG1jYnl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMyNjcwMTUsImV4cCI6MjAwODg0MzAxNX0.Ee739sHM5jqGI7CMJ_pPUd9Gs_8o6xf1rRswxe0eIxA'
+
+# Define la instancia del cliente Supabase
+SUPABASE_CLIENT = supabase.Client(SUPABASE_URL, SUPABASE_ANON_KEY)
 
 
 # Password validation
