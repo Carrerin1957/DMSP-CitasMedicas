@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Django CRUD Application</title>
+    <title>Dirección municipal de salud</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -13,101 +13,105 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="icon" href="{% static 'logoFavicon.ico'%}" type="image/x-icon" />
   </head>
 
-  <body style="margin-top: 55px; margin-bottom:90px">
-
+  <body style="margin-top: 55px">
     <!--Navbar-->
-<div class="fixed-top"> 
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Rol del usuario</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            {% if user.is_authenticated %}
+    <div class="fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Rol del usuario</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              {% if user.is_authenticated %}
 
-            <li class="nav-item active">
+              <li class="nav-item active">
                 <a class="nav-link" href="/">Home</a>
               </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/tasks">Tasks</a>
-            </li>
-            <li class="nav-item">
+              <li class="nav-item">
+                <a class="nav-link" href="/tasks">Tasks</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="/task">Create task</a>
-            </li>
-            <li class="nav-item">
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="/logout">Logout</a>
-            </li>
-            {% endif %}
-
-          </ul>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+          <img
+            src="{% static 'logo-1.png' %}"
+            alt="Logo-coatza"
+            width="130"
+            height="35"
+            class="d-inline-block align-text-top"
+          />
         </div>
-        <img
-          src="{% static 'logo-1.png' %}"
-          alt="Logo-coatza"
-          width="130"
-          height="35"
-          class="d-inline-block align-text-top"
-        />
+      </nav>
+    </div>
+
+    <!--Breadcrumbs prueba-->
+    <nav
+      aria-label="breadcrumb"
+      style="
+        background-color: #dedad0;
+        --bs-breadcrumb-divider: '>>';
+        height: 30px;
+      "
+    >
+      <div class="container-fluid">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Library</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
       </div>
     </nav>
 
-</div>
-
-
-<!--Breadcrumbs prueba-->
-<nav  aria-label="breadcrumb" style="background-color: #DEDAD0; --bs-breadcrumb-divider: '>>'; height: 30px">
-    <div class="container-fluid">
-        <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Library</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Data</li>
-        </ol>
+    <!--Contenido de las paginas-->
+    <div class="container-fluid main" style="margin-bottom: 20px">
+      {% block content %} {% endblock %}
     </div>
-</nav>
-
-        
-
-        <!--Contenido de las paginas-->
-        <div class="container-fluid">
-            {% block content %} 
-        
-            {% endblock %}
-        </div>
-        
-
-
-    
-    
-
-    
 
     <!--Footer-->
-    <footer class="fixed-bottom">
-
-        <div
-    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 navbar-custom "
-  >
-    <!-- Copyright -->
-    <div class="text-white mb-0 mb-md-0">
-      Copyright © 2022-2025. All rights reserved.
-    </div>
-    <!-- Copyright -->
-  </div>
-
+    <footer class="">
+      <div
+        class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 navbar-custom"
+      >
+        <!-- Copyright -->
+        <div class="text-white mb-0 mb-md-0">
+          Copyright © 2022-2025. All rights reserved.
+        </div>
+        <!-- Copyright -->
+      </div>
     </footer>
+
+    <script>
+      // Agregar un evento clic al botón
+      document
+        .getElementById("botonVolver")
+        .addEventListener("click", function () {
+          // Usar la función history.back() para regresar a la página anterior
+          window.history.back();
+          event.preventDefault();
+        });
+    </script>
+
     
 
   </body>

@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<!--Buscador-->
+<div style="margin-bottom: 15px">
+  <nav class="navbar navbar-light">
+    <div class="container-fluid">
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Buscar paciente"
+          aria-label="Search"
+          style="border: 1px solid #000"
+        />
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
+</div>
+
+<!--cuerpo del home-->
+<div class="container-fluid">
+  <div class="row d-flex justify-content-center align-items-center text-center">
+    <!--Boton-->
+    <div class="col-md-9 col-lg-4 col-xl-3 mb-5">
+      <a href="#" style="text-decoration: none"
+        ><div class="card custom-card mb-5">
+          <div class="card-body">Crear reporte/Estadística</div>
+        </div></a
+      >
+
+      <a href="#" style="text-decoration: none"
+        ><div class="card custom-card">
+          <div class="card-body">Dar de baja a usuario</div>
+        </div></a
+      >
+    </div>
+
+    <!--Boton-->
+    <div class="col-md-9 col-lg-4 col-xl-2 mb-5 offset-xl-1">
+      <img
+        src="{% static 'LogoBarco.png' %}"
+        class="img-fluid mb-5"
+        alt="Sample image"
+      />
+      <a href="#" style="text-decoration: none"
+        ><div class="card custom-card">
+          <div class="card-body">Crear usuario</div>
+        </div></a
+      >
+
+      
+    </div>
+
+    <!--Boton-->
+    <div class="col-md-9 col-lg-4 col-xl-3 offset-xl-1 mb-5">
+      <a href="#" style="text-decoration: none"
+        ><div class="card custom-card mb-5">
+          <div class="card-body">Vizualizar historial clínico</div>
+        </div></a
+      >
+
+      <a href="#" style="text-decoration: none"
+        ><div class="card custom-card">
+          <div class="card-body">Citas médicas generales</div>
+        </div></a
+      >
+    </div>
+
+    <div class="offset-xl-1"></div>
+  </div>
+</div>
+
+{% endblock %}

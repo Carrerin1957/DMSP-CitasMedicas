@@ -1,4 +1,5 @@
-{% load static %} {% block content %}
+ {% block content %}
+ {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +45,7 @@
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-md-9 col-lg-6 col-xl-5">
             <img
-              src="https://i0.wp.com/costaveracruz.net/wp-content/uploads/2022/06/LOGO-AYUNTAMIENTO-22-25.png?w=533&ssl=1"
+              src="{% static 'LogoBarco.png' %}"
               class="img-fluid img-thumbnail"
               alt="Sample image"
             />

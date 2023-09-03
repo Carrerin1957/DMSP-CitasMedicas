@@ -1,0 +1,251 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<!-- Titulo -->
+<div class="container" style="margin-top: 40px">
+  <div class="text-with-lines">
+    <div class="line line-top"></div>
+    <p class="display-5 fw-bold">FICHA DE IDENTIDAD DEL PACIENTE</p>
+    <div class="line line-bottom"></div>
+  </div>
+</div>
+
+<div class="container-fluid" style="margin-top: 40px">
+  <!--Boton volver-->
+  <div class="col-md-9 offset-md-1" style="margin-bottom:20px;">
+    <button type="submit" class="btn btn-danger" id="botonVolver">Volver</button>
+  </div>
+
+  <form class="row g-3">
+    <!--Todo el cuerpo del formulario-->
+    <div class="col-md-9 offset-md-1">
+      <label for="inputName" class="form-label">Nombre(s)</label>
+      <input type="text" class="form-control" id="inputName" />
+    </div>
+
+    <div class="col-md-9 offset-md-1">
+      <label for="inputApellidoP" class="form-label">Apellido paterno</label>
+      <input type="text" class="form-control" id="inputApellidoP" />
+    </div>
+
+    <div class="col-md-9 offset-md-1">
+      <label for="inputApellidoM" class="form-label">Apellido materno</label>
+      <input type="text" class="form-control" id="inputApellidoM" />
+    </div>
+
+    <div class="col-md-5 offset-md-1">
+      <label for="estadoCivil" class="form-label">Estado civil</label>
+      <input type="text" class="form-control" id="estadoCivil" />
+    </div>
+
+    <div class="col-md-2">
+      <label for="edad" class="form-label">Edad</label>
+      <input type="number" class="form-control" id="edad" />
+    </div>
+    <div class="col-md-5 offset-md-1">
+      <label for="curp" class="form-label">CURP</label>
+      <input
+        type="text"
+        class="form-control"
+        id="curp"
+        placeholder=""
+      />
+    </div>
+    <div class="col-md-3">
+      <label for="escolaridad" class="form-label">Escolaridad</label>
+      <select id="escolaridad" class="form-select">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+
+    <div class="col-md-9 offset-md-1">
+      <label for="colonia" class="form-label">Colonia</label>
+      <input type="text" class="form-control" id="colonia" />
+    </div>
+    <div class="col-md-5 offset-md-1">
+      <label for="calle" class="form-label">Calle</label>
+      <input type="text" class="form-control" id="calle" />
+    </div>
+
+    <div class="col-md-2">
+      <label for="numeroExterior" class="form-label">Número exterior</label>
+      <input type="text" class="form-control" id="numeroExterior" />
+    </div>
+
+    <div class="col-md-9 offset-md-1">
+      <label for="referencias" class="form-label"
+        >Entre que calles o referencias</label
+      >
+      <input type="text" class="form-control" id="referencias" />
+    </div>
+
+    <div class="col-md-5 offset-md-1">
+      <label for="telefono" class="form-label">Teléfono</label>
+      <input type="text" class="form-control" id="telefono" />
+    </div>
+
+    <div class="col-md-2">
+      <label for="cp" class="form-label">C.P.</label>
+      <input type="text" class="form-control" id="cp" />
+    </div>
+
+    <div class="col-md-6 offset-md-1">
+      <label for="derechohabiencia" class="form-label">Derechohabiencia</label>
+      <select id="derechohabiencia" class="form-select">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+
+    <div class="col-md-9 offset-md-1">
+      <label for="georeferencia" class="form-label">Georeferencia</label>
+      <input
+        type="text"
+        class="form-control"
+        id="georeferencia"
+        placeholder="A que unidad de salud pertenece"
+      />
+    </div>
+
+    <div class="col-md-9 offset-md-1">
+      <label for="enfermedad" class="form-label">Enfermedades que padece</label>
+      <input
+        type="text"
+        class="form-control"
+        id="enfermedad"
+        placeholder="Obesidad I, diabetes, hipertensión..."
+      />
+    </div>
+
+    <div class="col-md-9 offset-md-1">
+      <label for="diagnostico" class="form-label">Diagnostico actual</label>
+      <input type="text" class="form-control" id="diagnostico" placeholder="" />
+    </div>
+
+    <div class="col-md-9 offset-md-1">
+      <label for="ultimaVisita" class="form-label"
+        >Última visita con su médico de control</label
+      >
+      <input
+        type="date"
+        class="form-control"
+        id="ultimaVisita"
+        placeholder=""
+      />
+    </div>
+
+    <div class="col-md-10 offset-md-1 fw-bold">
+      <label class="form-label" for="">
+        Es beneficiario de algún programa de gobierno
+      </label>
+    </div>
+    <!--Checkbox1-->
+    <div class="col-md-1 offset-md-1 fw-bold">
+      <label class="form-label" for=""> Federal</label>
+    </div>
+
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck"> No </label>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck"> Si </label>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <input
+        type="text"
+        class="form-control"
+        id="ultimaVisita"
+        placeholder="¿Cuál?"
+      />
+    </div>
+
+    <div class="col-md-4"></div>
+
+    <!--Checkbox2-->
+    <div class="col-md-1 offset-md-1 fw-bold">
+      <label class="form-label" for=""> Estatal</label>
+    </div>
+
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck"> No </label>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck"> Si </label>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <input
+        type="text"
+        class="form-control"
+        id="ultimaVisita"
+        placeholder="¿Cuál?"
+      />
+    </div>
+
+    <div class="col-md-4"></div>
+
+    <!--Checkbox3-->
+    <div class="col-md-1 offset-md-1 fw-bold">
+      <label class="form-label" for=""> Municipal</label>
+    </div>
+
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck"> No </label>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck"> Si </label>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <input
+        type="text"
+        class="form-control"
+        id="ultimaVisita"
+        placeholder="¿Cuál?"
+      />
+    </div>
+
+    <div class="col-md-4"></div>
+
+    <div class="col-md-10 offset-md-1 fw-bold">
+      <label class="form-label" for="">
+        Cuantas personas viven con usted
+      </label>
+    </div>
+
+    <div class="col-md-3 offset-md-1">
+      <input
+        type="number"
+        class="form-control"
+        id="ultimaVisita"
+        placeholder="Número de personas"
+      />
+    </div>
+
+    <div class="col-md-9 offset-md-1">
+      <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+    </div>
+    
+  </form>
+</div>
+
+{% endblock %}

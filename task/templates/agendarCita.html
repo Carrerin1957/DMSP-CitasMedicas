@@ -1,0 +1,123 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<div class="container-fluid">
+  <div class="row g-3">
+    <!--Buscador-->
+    <div class="col-md-5 offset-md-1" style="margin-top: 55px">
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="offset-md-4"></div>
+
+    <form class="row g-3">
+      <!--Fecha, hora y especialidad-->
+      <div class="col-md-2 offset-md-1" style="margin-top: 55px">
+        <label for="inputFecha" class="form-label">Fecha</label>
+        <input type="date" class="form-control" id="inpuFecha" />
+      </div>
+      <div class="col-md-2 offset-md-1" style="margin-top: 55px">
+        <label for="inputFecha" class="form-label">Hora</label>
+        <input type="time" class="form-control" id="inpuFecha" />
+      </div>
+      <div class="col-md-4 offset-md-1" style="margin-top: 55px">
+        <label for="inputFecha" class="form-label">Especialidad</label>
+        <select id="escolaridad" class="form-select">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+
+      <div class="offset-md-1"></div>
+
+      <!--Tabla-->
+      <div class="table-responsive" style="margin-top: 30px">
+        <table class="table table-hover table-bordered">
+          <thead class="table-danger">
+            <tr>
+              <th scope="col">Selc.</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Dirección</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col">Ficha</th>
+            </tr>
+          </thead>
+          <tbody class="table-secondary">
+            <tr>
+              <th scope="row">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault1"
+                  />
+                </div>
+              </th>
+              <td for="flexRadioDefault1">Keila Cruz de la Cruz</td>
+              <td>21</td>
+              <td>Col. Divina providencia / calle: Espíritu Santo</td>
+              <td>921 273 2037</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault2"
+                  />
+                </div>
+              </th>
+              <td for="flexRadioDefault2">Keila Cruz Santiago</td>
+              <td>26</td>
+              <td>Col.Petrolera / calle: Los cabos</td>
+              <td>921 273 2037</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault3"
+                  />
+                </div>
+              </th>
+              <td for="flexRadioDefault3">Keila Cruz Dominguez</td>
+              <td>33</td>
+              <td>Col. Mnauel Avila Camacho / calle: 20 de noviembre</td>
+              <td>921 118 7752</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!--Boton volver-->
+      <div class="col-md-1" style="margin-top: 40px">
+        <button type="submit" class="btn btn-danger btn-lg" id="botonVolver">
+          Cancelar
+        </button>
+      </div>
+
+      <div class="col-md-1" style="margin-top: 40px">
+        <button type="submit" class="btn btn-success btn-lg">Guardar</button>
+      </div>
+      
+    </form>
+  </div>
+</div>
+{% endblock%}

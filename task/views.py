@@ -27,6 +27,19 @@ def delete_task(request, task_id):
 def home(request):
     return render(request, 'home.html')
 
+def homeAdmin(request):
+    return render(request, 'homeAdmin.html')
+
+def homePsicologo(request):
+    return render(request, 'homePsicologo.html')
+
+def fichaIdentidad(request):
+    return render(request, 'fichaIdentidad.html')
+
+def agendarCita(request):
+    return render(request, 'agendarCita.html')
+
+
 def signup(request):
     if request.method == 'GET':
         return render(request, 'signup.html', {'form': UserCreationForm()})

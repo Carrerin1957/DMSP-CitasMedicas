@@ -22,10 +22,14 @@ from task import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('task/', include('task.urls')),
+    path('', views.signin, name='signin'),
     path('home/', views.home, name='home'),
     path('signup/', views.signup, name='signup'),
     path('tasks/', views.tasks, name='tasks'),
     path('tasks/create/', views.createTask, name='createTask'),
     path('logout/', views.signout, name='logout'),
-    path('', views.signin, name='signin'),
+    path('homeAdmin/', views.homeAdmin, name='homeAdmin'),
+    path('homePsicologo/', views.homePsicologo, name='homePsicologo'),
+    path('fichaIdentidad/', views.fichaIdentidad, name='fichaIdentidad'),
+    path('agendarCita/', views.agendarCita, name='agendarCita'),
 ]
