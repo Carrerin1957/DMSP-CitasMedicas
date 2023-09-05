@@ -32,4 +32,5 @@ urlpatterns = [
     path('homePsicologo/', views.homePsicologo, name='homePsicologo'),
     path('fichaIdentidad/', views.fichaIdentidad, name='fichaIdentidad'),
     path('agendarCita/', views.agendarCita, name='agendarCita'),
+    path('hojaClinica', views.regitrarHojaClinica, name='registroHoja')
 ]

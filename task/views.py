@@ -39,6 +39,9 @@ def fichaIdentidad(request):
 def agendarCita(request):
     return render(request, 'agendarCita.html')
 
+def regitrarHojaClinica(request):
+    return render(request, 'hojaClinica.html')
+
 
 def signup(request):
     if request.method == 'GET':
